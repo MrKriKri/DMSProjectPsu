@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 14, 2017 at 11:39 AM
+-- Generation Time: Mar 14, 2017 at 06:09 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -38,7 +38,8 @@ CREATE TABLE `patient` (
 
 INSERT INTO `patient` (`ID`, `E-mail`, `Password`) VALUES
 (1, 'max', '123'),
-(2, 'sand', '1234');
+(2, 'sand', '1234'),
+(6, 'best', '777');
 
 -- --------------------------------------------------------
 
@@ -62,8 +63,7 @@ CREATE TABLE `patient_info` (
 INSERT INTO `patient_info` (`ID`, `Name`, `Surname`, `IDcard`, `DOB`, `Tel.`) VALUES
 (1, 'Max', 'eiei', '12312454', '1995-02-10', '0954138706'),
 (2, 'sand', 'eiei', '1223325502', '1993-11-09', '0020200'),
-(4, 'best', '222', '12312312', '1995-10-02', '1231231'),
-(5, 'eiei', 'msamm', '12312312', '1996-10-02', '1231231');
+(6, 'saran', 'prom', '12312', '1995-05-02', '01111231');
 
 --
 -- Indexes for dumped tables
@@ -90,7 +90,7 @@ ALTER TABLE `patient_info`
 -- AUTO_INCREMENT for table `patient_info`
 --
 ALTER TABLE `patient_info`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
