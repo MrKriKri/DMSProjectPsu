@@ -6,6 +6,7 @@ function loadJSONListener(event)
 		if(resp) then
 		print(resp[1]["ID"])
 		print(resp[1]["E-mail"])
+		print(resp[1]["Name"])
 		print("true")
 		else 
 			print("fail paaword")
@@ -19,7 +20,7 @@ end
 
 function doRegister(mail,pass,name,surname,idcard,dob,tel)
     network.request(
-        "http://localhost/ws.php?E-mail="..mail.."&Password="..pass.."&Name="..name.."&Surname="..surname.."&IDcard="..idcard.."&DOB="..dob..",&Tel="..tel..,
+        "http://localhost/ws.php?E-mail="..mail.."&Password="..pass.."&Name="..pass.."&Surname="..pass.."&IDcard="..pass.."&DOB="..pass.."&Tel="..pass,
         "GET",
         loadJSONListener,
         {}

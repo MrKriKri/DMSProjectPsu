@@ -4,7 +4,7 @@ $host = "localhost";
 $username ="root";
 $password = "";
 $objCon=mysqli_connect($host,$username,$password,"dms_login");
-$newID = "8";
+$newID = "";
 
 
 $sqlInserch = "INSERT INTO `patient_info`(`Name`, `Surname`, `IDcard`, `DOB`, `Tel.`) VALUES ('".$_GET["Name"]."','".$_GET["Surname"]."','".$_GET["IDcard"]."','".$_GET["DOB"]."','".$_GET["Tel"]."')";
@@ -35,17 +35,12 @@ while($Data=mysqli_fetch_assoc($objResponse)){
 
 
 $sqlInserchUSER="INSERT INTO `patient` (`ID`,`E-mail`, `Password`) VALUES ('".$newID."','".$_GET["E-mail"]."','".$_GET["Password"]."')";
-mysqli_query($objCon,$sqlInserchUSER);
-//echo $sqlInserchUSER;
-
-$sqlForSure = "SELECT * FROM `patient`,`patient_info` WHERE patient.ID=patient_info.ID and patient.ID='".$newID."'" ;
-$objResult=mysqli_query($objCon,$sqlForSure);
-//echo $sqlForSure;
-$result = array();
-while($Data1 = mysqli_fetch_array($objResult)){
-
-	$result[] = $Data1;
-	echo json_encode($result);
+$objResult=mysqli_query($objCon,$sqlInserchUSER);
+echo $sqlInserchUSER;
+$reuslt = arrat();
+while($data1 = mysqli_fetch_assoc($objResult)){
+$reuslt[]=$data1;
+echo json_encode($reuslt);
 }
 ?>
 
