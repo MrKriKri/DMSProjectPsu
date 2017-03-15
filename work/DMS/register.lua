@@ -9,11 +9,11 @@ function loadJSONListener(event)
 		print(resp[1]["Name"])
 		print("true")
 		else 
-			print("fail paaword")
+			print("something wrong")
 		end
 	
 	else 
-		print("login fail") 
+		print("fail Register") 
 	end
 end
 
