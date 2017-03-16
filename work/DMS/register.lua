@@ -18,9 +18,9 @@ function loadJSONListener(event)
 end
 
 
-function doRegister(mail,pass,name,surname,idcard,dob,tel)
+function doRegister(mail,pass,name,surname,idcard,dob,tel,Docname,line,doctel)
     network.request(
-        "http://localhost/ws.php?E-mail="..mail.."&Password="..pass.."&Name="..pass.."&Surname="..pass.."&IDcard="..pass.."&DOB="..pass.."&Tel="..pass,
+        "http://localhost/ws.php?E-mail="..mail.."&Password="..pass.."&Name="..name.."&Surname="..surname.."&IDcard="..idcard.."&DOB="..dob.."&Tel="..tel.."&Doctorname="..Docname.."&Lineid="..Line.."&Teldoc="..doctel,
         "GET",
         loadJSONListener,
         {}
