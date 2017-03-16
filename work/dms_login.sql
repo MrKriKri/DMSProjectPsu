@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 14, 2017 at 06:09 PM
+-- Generation Time: Mar 16, 2017 at 08:42 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -37,9 +37,28 @@ CREATE TABLE `patient` (
 --
 
 INSERT INTO `patient` (`ID`, `E-mail`, `Password`) VALUES
-(1, 'max', '123'),
-(2, 'sand', '1234'),
-(6, 'best', '777');
+(17, 'mizxcx', '123');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `patient_doctor`
+--
+
+CREATE TABLE `patient_doctor` (
+  `DoctorID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL,
+  `DocName` varchar(30) NOT NULL,
+  `LineID` varchar(30) NOT NULL,
+  `Tel` varchar(13) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `patient_doctor`
+--
+
+INSERT INTO `patient_doctor` (`DoctorID`, `ID`, `DocName`, `LineID`, `Tel`) VALUES
+(1, 17, 'kuy', 'eiei', '0123123');
 
 -- --------------------------------------------------------
 
@@ -61,9 +80,7 @@ CREATE TABLE `patient_info` (
 --
 
 INSERT INTO `patient_info` (`ID`, `Name`, `Surname`, `IDcard`, `DOB`, `Tel.`) VALUES
-(1, 'Max', 'eiei', '12312454', '1995-02-10', '0954138706'),
-(2, 'sand', 'eiei', '1223325502', '1993-11-09', '0020200'),
-(6, 'saran', 'prom', '12312', '1995-05-02', '01111231');
+(17, 'teeta', 'chit', '12312', '1995-05-02', '01111231');
 
 --
 -- Indexes for dumped tables
@@ -77,6 +94,13 @@ ALTER TABLE `patient`
   ADD KEY `ID` (`ID`);
 
 --
+-- Indexes for table `patient_doctor`
+--
+ALTER TABLE `patient_doctor`
+  ADD PRIMARY KEY (`DoctorID`),
+  ADD KEY `ID` (`ID`);
+
+--
 -- Indexes for table `patient_info`
 --
 ALTER TABLE `patient_info`
@@ -87,10 +111,15 @@ ALTER TABLE `patient_info`
 --
 
 --
+-- AUTO_INCREMENT for table `patient_doctor`
+--
+ALTER TABLE `patient_doctor`
+  MODIFY `DoctorID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `patient_info`
 --
 ALTER TABLE `patient_info`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
