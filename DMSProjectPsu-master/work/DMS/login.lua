@@ -41,7 +41,7 @@ end
 
 function Login(mail,pass)
     network.request(
-        "http://localhost:8080/welcome.php?name="..mail.."&age="..pass,
+        "http://localhost/welcome.php?name="..mail.."&age="..pass,
         "GET",
         loadJSONListener,
         {}
