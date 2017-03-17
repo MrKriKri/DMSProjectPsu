@@ -2,26 +2,37 @@ local composer = require("composer")
 local widget = require("widget")
 local scene = composer.newScene()
 
-composer.setVariable("emailSave", "")
-composer.setVariable("pswSave", "")
-composer.setVariable("cnfmpassSave", "")
-
 function scene:create(event)
 	local sceneGroup = self.view
 	print("Scene #1 : create")
 end
 
 local function showScene(event)
-	if(event.phase=="ended") then
-	composer.gotoScene("regis2")
-end
+
+		local comp =  comparePassw(txfText2.text,txfText3.text)
+		if(comp == true)then
+			composer.gotoScene("regis2")
+		else
+			errorshow.text = "password not same or blank"
+		end
 end
 
 local function backscene( event )
 	if(event.phase == "ended")then
 	composer.gotoScene("standard")
 end
-	-- body
+end
+
+function comparePassw(text,text2)
+
+	text = txfText2.text
+	text2 = txfText3.text
+
+	if ((text ~= nil or text2 ~= nil) and (text == text2))then
+		return true
+	end
+
+
 end
 
 function scene:show(event)
@@ -30,15 +41,16 @@ function scene:show(event)
 	if(phase == "will") then
 		print("Scene #1 : show (will)")
 		display.setDefault("background",0,0,0)
-
 		myText = display.newText("Register",cx,140-50,"Arial",60)
 		myText1 = display.newText("Email",50,220,"Arial",20)
 		myText2 = display.newText("Password",47,265,"Arial",20)
 		myText3 = display.newText("Confirm",50,310,"Arial",20)
+		errorshow = display.newText("",cx,370,"Arial",20)
 
 		txfText = native.newTextField(202,220 ,220, 30)
 		txfText2 = native.newTextField(202,265 ,220, 30)
 		txfText3 = native.newTextField(202,310 ,220, 30)
+
 		nextbtn = widget.newButton(
 				{x = cx+70, y = cy+250, 
     			onEvent = showScene,
@@ -55,9 +67,10 @@ function scene:show(event)
     			height = 50}
     		)
 		
-		
 	elseif(phase == "did") then
 		print("Scene #1 : show (did)")
+		txfText2:addEventListener("userInput",comparePassw)
+		txfText3:addEventListener("userInput",comparePassw)
 		
 	end
 end
@@ -75,6 +88,8 @@ function scene:hide(evevt)
 		txfText3:removeSelf()
 		nextbtn:removeSelf()
 		backbtn:removeSelf()
+		errorshow:removeSelf()
+		errorshow = nil
 		backbtn = nil
 		nextbtn = nil
 		myText = nil
