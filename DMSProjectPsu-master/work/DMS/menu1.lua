@@ -6,6 +6,10 @@ function gotoProfile(event)
 	composer.gotoScene("menu2")
 end
 
+function gotoCalculate(event)
+	composer.gotoScene("calculatesugar")
+end
+
 function scene:create(event)
 	local sceneGroup = self.view
 	print("Scene #1 : create")
@@ -80,6 +84,7 @@ Information = widget.newButton(
 
 		
 ProFile:addEventListener("touch",gotoProfile)
+Analysis:addEventListener("touch",gotoCalculate)
 
 	elseif(phase == "did") then
 		print("Scene #1 : show (did)")

@@ -5,10 +5,7 @@ function  loadJSONListener(event)
 	if not(event.isError)then
 		resp = JSON.decode(event.response)
 
-		
-
-		print(resp[1]["ID"])
-		print(resp[1]["E-mail"])
+		print("ID : "..resp[1]["ID"]..", Email : "..resp[1]["E-mail"])
 	
 		checklogin = true
 
@@ -44,7 +41,7 @@ end
 
 function Login(mail,pass)
     network.request(
-        "http://localhost/welcome.php?name="..mail.."&age="..pass,
+        "http://localhost:8080/welcome.php?name="..mail.."&age="..pass,
         "GET",
         loadJSONListener,
         {}

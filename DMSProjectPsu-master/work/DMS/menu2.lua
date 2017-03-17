@@ -87,9 +87,10 @@ function scene:hide(evevt)
 		myText4:removeSelf()
 		myText5:removeSelf()
 		myText6:removeSelf()
+		ground:removeSelf()
 
 		ProFile = nil
-		
+		ground = nil
 		myText = nil
 		myText1 = nil
 		myText2 = nil
