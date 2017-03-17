@@ -10,8 +10,8 @@ end
 --------------------------------------------------------------------
 function gotoInside(event)
   if(event.phase=="ended") then
-  print("click")
-    doLogin(txfText.text,txfText2.text)
+  
+    Login(txfText.text,txfText2.text)
     
   end
 end

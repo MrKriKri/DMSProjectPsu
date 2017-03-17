@@ -22,9 +22,10 @@ end
 	
 --end
 
---function gotoLogout(event)
+function gotoLogout(event)
+	LogOut(checklogin)
 	
---end
+end
 
 function scene:create(event)
 	local sceneGroup = self.view
@@ -63,7 +64,7 @@ ProFile = widget.newButton(
 --myText2:addEventListener("touch",gotoEdit)
 --myText3:addEventListener("touch",gotoReminder)
 --myText4:addEventListener("touch",gotoFoodrec)
---myText5:addEventListener("touch",gotoLogout)	
+myText5:addEventListener("touch",gotoLogout)	
 myText6:addEventListener("touch",gotoMenu)
 
 	elseif(phase == "did") then
