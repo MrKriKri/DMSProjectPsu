@@ -19,6 +19,7 @@ local function  showID(event)
 	 id = event.target.id
 	if(event.phase == "ended")then
 		print(id)
+		composer.gotoScene("regis3")
 	end
 	return id
 end
