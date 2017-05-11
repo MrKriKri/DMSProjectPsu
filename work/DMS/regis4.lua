@@ -23,12 +23,16 @@ function regis(event)
 				
 				
 	else
-		native.showAlert("Fail","Pleas!! Select Doctor","OK")
+		native.showAlert("Fail","Please!! Select Doctor","OK")
 	end
 end
 end
 
 local function showScenee(event)
+	composer.gotoScene("standard")
+end
+
+local function Cancel(event)
 	composer.gotoScene("standard")
 end
 
@@ -72,7 +76,7 @@ LogoCan = widget.newButton(
   }
 )
 	LogoCon:addEventListener("touch",regis)
-	LogoCan:addEventListener("touch",showScene)
+	LogoCan:addEventListener("touch",Cancel)
 
 	elseif(phase == "did") then
 		print("Scene #4 : show (did)")
@@ -85,7 +89,7 @@ function scene:hide(event)
 	if(phase == "will") then
 
 		LogoCon:removeEventListener("touch",regis)
-		LogoCan:removeEventListener("touch",showScene)
+		LogoCan:removeEventListener("touch",Cancel)
 		
 		composer.setVariable("mail","")
 		composer.setVariable("pass","")
