@@ -1,5 +1,0 @@
-local composer = require("composer")
-composer.setVariable("checklogin") 
-composer.setVariable("age","")
-composer.setVariable("sugar","")
-composer.gotoScene("standard")
