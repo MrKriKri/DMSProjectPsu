@@ -37,7 +37,7 @@ function scene:show(event)
 	if(phase == "will") then
 		print("Scene #2 : show (will)")
 		display.setDefault("background",0/255,162/255,232/255)
-		myText1 = display.newText("Register",cx,140-50,"Arial",40)
+	
 		myText = display.newText("Please Choose",cx,140-10,"Arial",30)
 		myText2 = display.newText("Men",cx-50,380,"Arial",20)
 		myText3 = display.newText("Woman",cx+50,380,"Arial",20)
@@ -92,13 +92,13 @@ function scene:hide(evevt)
 		myText:removeSelf()
 		myText2:removeSelf()
 		myText3:removeSelf()
-		myText1:removeSelf()
+	
 		LogoMan:removeSelf()
 		LogoWomen:removeSelf()
 		nextbtn:removeSelf()
 		backbtn:removeSelf()
 		backbtn = nil
-		myText1 = nil
+
 		nextbtn = nil
 		LogoMan = nil
 		LogoWomen = nil
