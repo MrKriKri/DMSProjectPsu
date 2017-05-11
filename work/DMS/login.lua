@@ -13,6 +13,7 @@ function  loadJSONListener(event)
 		--print(user.." "..username)
 		composer.setVariable("nowuser",user)
 		composer.setVariable("username",username)
+		composer.setVariable("UserIDLine",resp[1]["UserIDLine"])
 
 	
 		checklogin = true

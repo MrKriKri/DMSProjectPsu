@@ -2,6 +2,8 @@ local composer = require("composer")
 local widget = require("widget")
 require("recordBlood")
 require("login")
+require("sendLine")
+local sugarblood = 0
 local scene = composer.newScene()
 local titleText, hTextField, wTextField, bmiText,login
 
@@ -10,9 +12,13 @@ function gotoMenu(event)
 end
 
 function gotoAddtoRec(event)
+	sugarblood = tonumber(wTextField.text)
 	if(event.phase == "ended")then
 	login = composer.getVariable("nowuser")
 	print(login)
+	if(sugarblood>180) then
+	sendLine(composer.getVariable("UserIDLine"),login,composer.getVariable("username"),wTextField.text)
+	end
 	RecordSugarBloodRate(login,wTextField.text)
 	composer.setVariable("sugar",nil)
 end
@@ -40,6 +46,7 @@ if( w == nil ) then
 			elseif(w>180)then
 				bmiText.text="อันตราย"
 				display.setDefault("background", 160/255,0, 0)
+
 		end	
 end
 end
