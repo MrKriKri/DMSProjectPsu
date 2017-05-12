@@ -6,9 +6,9 @@ function gotoMenuuu(event)
 	composer.gotoScene("menu2")
 end
 
---function gotoHistory(event)
---	composer.gotoScene("History")
---end
+function gotoHistory(event)
+	composer.gotoScene("Foodrec2")
+end
 
 --function gotoConFirm(event)
 	-- body
@@ -68,7 +68,7 @@ function scene:show(event)
 		
 --myText5:addEventListener("touch",gotoConFirm)
 myText6:addEventListener("touch",gotoMenuuu)
---myText7:addEventListener("touch",gotoHistory)
+myText7:addEventListener("touch",gotoHistory)
 
 	elseif(phase == "did") then
 		print("Scene #1 : show (did)")
