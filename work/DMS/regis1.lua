@@ -43,7 +43,6 @@ function scene:show(event)
 	local phase = event.phase
 	if(phase == "will") then
 		print("Scene #1 : show (will)")
-		display.setDefault("background",0/255,162/255,232/255)
 		myText = display.newText("Register",cx,140-50,"Arial",60)
 		myText1 = display.newText("Email",50,220,"Arial",20)
 		myText2 = display.newText("Password",47,265,"Arial",20)

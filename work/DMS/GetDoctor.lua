@@ -116,7 +116,6 @@ end
 end 
 
 function GetDoctor()
-    local url ="http://localhost/GetInfoDoctor.php"
     print(url)
     network.request(
         url,
