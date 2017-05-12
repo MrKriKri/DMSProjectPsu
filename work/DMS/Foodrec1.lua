@@ -54,9 +54,9 @@ function scene:show(event)
 --		txfText4.isSecure = true
 
 
-		myText5 = display.newText("Confirm",cx,400,"Arial",30)
-		myText6 = display.newText("Back",30,500,"Arial",20)
-		myText7 = display.newText("History",280,500,"Arial",20)
+		myText9 = display.newText("Confirm",cx,400,"Arial",30)
+		myText10 = display.newText("Back",30,500,"Arial",20)
+		myText11 = display.newText("History",280,500,"Arial",20)
 
 --Logo = widget.newButton(
 --		   {
@@ -70,8 +70,8 @@ function scene:show(event)
 
 		
 --myText5:addEventListener("touch",gotoConFirm)
-myText6:addEventListener("touch",gotoMenuuu)
-myText7:addEventListener("touch",gotoHistory)
+myText10:addEventListener("touch",gotoMenuuu)
+myText11:addEventListener("touch",gotoHistory)
 
 	elseif(phase == "did") then
 		print("Scene #1 : show (did)")
@@ -90,6 +90,14 @@ function scene:hide(evevt)
 		myText2:removeSelf()
 		myText3:removeSelf()
 		myText4:removeSelf()
+		myText5:removeSelf()
+		myText6:removeSelf()
+		myText7:removeSelf()
+		myText8:removeSelf()
+		myText9:removeSelf()
+		myText10:removeSelf()
+		myText11:removeSelf()
+
 
 		txfTextDate1:removeSelf()
 		txfTextMouth2:removeSelf()
@@ -97,10 +105,7 @@ function scene:hide(evevt)
 		txfText2:removeSelf()
 		txfText3:removeSelf()
 		txfText4:removeSelf()
-		
-		myText5:removeSelf()
-		myText6:removeSelf()
-		myText7:removeSelf()
+
 --		ground:removeSelf()
 --		Logo:removeSelf()
 --		Logotext:removeSelf()
@@ -112,6 +117,13 @@ function scene:hide(evevt)
 		myText2 = nil
 		myText3 = nil
 		myText4 = nil
+		myText5 = nil
+		myText6 = nil
+		myText7 = nil
+		myText8 = nil
+		myText9 = nil
+		myText10 = nil
+		myText11 = nil
 
 
 		txfTextDate1 = nil 
@@ -121,9 +133,7 @@ function scene:hide(evevt)
 		txfText3 = nil
 		txfText4 = nil
 
-		myText5 = nil
-		myText6 = nil
-		myText7 = nil
+	
 --		Logo = nil
 --		Logotext = nil
 
