@@ -48,10 +48,12 @@ function scene:show(event)
 	local phase = event.phase
 	if(phase == "will") then
 		print("Scene #4 : show (will)")
-		display.setDefault("background",0/255,162/255,232/255)
+		display.setDefault("background",153/255,217/255,234/255)
 
 		myText = display.newText("Register",cx,70,"Arial",50)
+		myText:setTextColor(0/255,0/255,0/255)
 		myText1 = display.newText("Select Your Doctor",cx,120,"Arial",30)
+		myText1:setTextColor(0/255,0/255,0/255)
 
 		
 		

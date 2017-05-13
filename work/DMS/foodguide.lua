@@ -9,7 +9,7 @@ function scene:create(event)
     print("Scene #1 : create")
 end
 
-function gotoMenuG(event)
+function gotoMenuGG(event)
     composer.gotoScene("menu1")
 end
 
@@ -26,12 +26,20 @@ function scene:show(event)
     end
 end
 
+myText1 = display.newText("Back",30,500,"Arial",20)
+myText1:setTextColor(0,0,0)
+
+
+
+myText1:addEventListener("touch",gotoMenuGG)
 function scene:hide(evevt)
     local sceneGroup = self.view
     local phase = evevt.phase
     if(phase == "will") then
         tableView:removeSelf()
+        myText1:removeSelf()
         tableView=nil
+        myText1=nil
      
         print("Scene #1 : hide (will)")
     elseif(phase == "did") then

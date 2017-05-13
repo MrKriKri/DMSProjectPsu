@@ -19,7 +19,7 @@ function rowRender(event)
     rowWidth = row.contentWidth
 
     if (row.index == 1) then
-        rowTitle1 = display.newText(row, "ค่าดัชนีน้ำตาล", 0, 0, "Quark-Bold", fontSize + 15)    
+        rowTitle1 = display.newText(row, "ค่าดัชนีน้ำตาล/1ชิ้น", 0, 0, "Quark-Bold", fontSize + 15)    
         rowTitle1:setFillColor(1, 1, 1)
         rowTitle1.x = display.contentCenterX
         rowTitle1.y = rowHeight * 0.5

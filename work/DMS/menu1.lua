@@ -33,7 +33,7 @@ function scene:show(event)
 	local phase = event.phase
 	if(phase == "will") then
 		print("Scene #1 : show (will)")
-		display.setDefault("background",0,0,0)
+		display.setDefault("background",14/255,4/255,193/255)
 
 		ground = display.newRect(cx,15,cw,60)
 		ground:setFillColor(0.4,0.4,0.4)

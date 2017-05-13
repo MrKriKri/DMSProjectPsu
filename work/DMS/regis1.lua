@@ -43,11 +43,15 @@ function scene:show(event)
 	local phase = event.phase
 	if(phase == "will") then
 		print("Scene #1 : show (will)")
-		display.setDefault("background",0/255,162/255,232/255)
+		display.setDefault("background",153/255,217/255,234/255)
 		myText = display.newText("Register",cx,140-50,"Arial",60)
+		myText:setTextColor(0/255,0/255,0/255)
 		myText1 = display.newText("Email",50,220,"Arial",20)
+		myText1:setTextColor(0/255,0/255,0/255)
 		myText2 = display.newText("Password",47,265,"Arial",20)
+		myText2:setTextColor(0/255,0/255,0/255)
 		myText3 = display.newText("Confirm",50,310,"Arial",20)
+		myText3:setTextColor(0/255,0/255,0/255)
 		errorshow = display.newText("",cx,370,"Arial",20)
 
 		txfText = native.newTextField(202,220 ,220, 30)
