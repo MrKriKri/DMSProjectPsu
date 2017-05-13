@@ -31,29 +31,32 @@ function scene:show(event)
 
 
 		myText = display.newText("Food Record",cx,140-80,"Arial",50)
-		myText1 = display.newText("Date",50,190,"Arial",20)
-		myText2 = display.newText("Meal",47,235,"Arial",20)
+		myText1 = display.newText("Date",50,170,"Arial",20)
+		myText2 = display.newText("Meal",48,225,"Arial",20)
 		myText3 = display.newText("Food",50,280,"Arial",20)
-		myText4 = display.newText("amount",50,325,"Arial",20)
+		myText4 = display.newText("Amount",50,335,"Arial",20)
+		myText5 = display.newText("Plate",225,335,"Arial",20)
+		myText6 = display.newText("Y",167,170,"Arial",18)
+		myText7 = display.newText("M",232,170,"Arial",18)
+		myText8 = display.newText("D",296,170,"Arial",18)
 
-
-		txfTextDate1 = native.newTextField(117,190 ,50, 30)
---		txfTextDate1.isSecure = true02
-		txfTextMouth2 = native.newTextField(177,190 ,50, 30)
+		txfTextDate1 = native.newTextField(125,170 ,60, 30)
+--		txfTextDate1.isSecure = true
+		txfTextMouth2 = native.newTextField(200,170 ,40, 30)
 --		txfTextMouth2.isSecure = true
-		txfTextYear3 = native.newTextField(237,190 ,50, 30)
+		txfTextYear3 = native.newTextField(265,170 ,40, 30)
 --		txfTextYear3.isSecure = true
-		txfText2 = native.newTextField(202,235 ,220, 30)
+		txfText2 = native.newTextField(180,225 ,170, 30)
 --		txfText2.isSecure = true
-		txfText3 = native.newTextField(202,280 ,220, 30)
+		txfText3 = native.newTextField(195,280 ,200, 30)
 --		txfText3.isSecure = true
-		txfText4 = native.newTextField(202,325 ,220, 30)
+		txfText4 = native.newTextField(145,335 ,100, 30)
 --		txfText4.isSecure = true
 
 
-		myText5 = display.newText("Confirm",cx,380,"Arial",30)
-		myText6 = display.newText("Back",30,500,"Arial",20)
-		myText7 = display.newText("History",280,500,"Arial",20)
+		myText9 = display.newText("Confirm",cx,400,"Arial",30)
+		myText10 = display.newText("Back",30,500,"Arial",20)
+		myText11 = display.newText("History",280,500,"Arial",20)
 
 --Logo = widget.newButton(
 --		   {
@@ -67,8 +70,8 @@ function scene:show(event)
 
 		
 --myText5:addEventListener("touch",gotoConFirm)
-myText6:addEventListener("touch",gotoMenuuu)
-myText7:addEventListener("touch",gotoHistory)
+myText10:addEventListener("touch",gotoMenuuu)
+myText11:addEventListener("touch",gotoHistory)
 
 	elseif(phase == "did") then
 		print("Scene #1 : show (did)")
@@ -87,6 +90,14 @@ function scene:hide(evevt)
 		myText2:removeSelf()
 		myText3:removeSelf()
 		myText4:removeSelf()
+		myText5:removeSelf()
+		myText6:removeSelf()
+		myText7:removeSelf()
+		myText8:removeSelf()
+		myText9:removeSelf()
+		myText10:removeSelf()
+		myText11:removeSelf()
+
 
 		txfTextDate1:removeSelf()
 		txfTextMouth2:removeSelf()
@@ -94,10 +105,7 @@ function scene:hide(evevt)
 		txfText2:removeSelf()
 		txfText3:removeSelf()
 		txfText4:removeSelf()
-		
-		myText5:removeSelf()
-		myText6:removeSelf()
-		myText7:removeSelf()
+
 --		ground:removeSelf()
 --		Logo:removeSelf()
 --		Logotext:removeSelf()
@@ -109,6 +117,13 @@ function scene:hide(evevt)
 		myText2 = nil
 		myText3 = nil
 		myText4 = nil
+		myText5 = nil
+		myText6 = nil
+		myText7 = nil
+		myText8 = nil
+		myText9 = nil
+		myText10 = nil
+		myText11 = nil
 
 
 		txfTextDate1 = nil 
@@ -118,9 +133,7 @@ function scene:hide(evevt)
 		txfText3 = nil
 		txfText4 = nil
 
-		myText5 = nil
-		myText6 = nil
-		myText7 = nil
+	
 --		Logo = nil
 --		Logotext = nil
 
