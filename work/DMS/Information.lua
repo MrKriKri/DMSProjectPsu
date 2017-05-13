@@ -72,31 +72,7 @@ function scene:show(event)
 		myText8 = display.newText("อาหารที่ไม่ควรรับประทาน",cx,325,"Arial",30)
 		myText9 = display.newText("แหล่งข้อมูลอ้างอิง",cx,360,"Arial",30)
 		myText10 = display.newText("ข้อมูลผู้จัดทำ",cx,395,"Arial",30)
-
-		
 		myText11 = display.newText("Back",30,500,"Arial",20)
-
---Logo = widget.newButton(
---		   {
---		    x = 50, y = 50, 
---		    
---		    defaultFile = "logo.png" ,
---		    width = 80,
---		    height = 80
---		  }
---		)
-
---Logotext = widget.newButton(
---		   {
---		    x = 202, y = 58, 
---		    
---		    defaultFile = "logotextt.png" ,
---		    width = 245,
---		    height = 315
---		  }
---		)
-
-
 		
 myText1:addEventListener("touch",gotoInfor1)
 myText2:addEventListener("touch",gotoInfor2)

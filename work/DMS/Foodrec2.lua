@@ -4,11 +4,16 @@ local widget = require("widget")
 require("GetMeal")
 
 function gotoMenuuu(event)
-	
 	composer.gotoScene("menu2")
 end
 
+--function gotoHistory(event)
+--	composer.gotoScene("History")
+--end
 
+--function gotoConFirm(event)
+	-- body
+--end
 
 function scene:create(event)
 	local sceneGroup = self.view
@@ -34,7 +39,7 @@ function scene:show(event)
 		GetMeal(composer.getVariable("nowuser"))
 		
 
-		myText6:addEventListener("touch",gotoMenuuu)
+myText6:addEventListener("touch",gotoMenuuu)
 
 
 	elseif(phase == "did") then
@@ -47,11 +52,24 @@ function scene:hide(evevt)
 	local sceneGroup = self.view
 	local phase = evevt.phase
 	if(phase == "will") then
+
+	
 		myText:removeSelf()
+		
+
+		
+		
+		
 		myText6:removeSelf()
+		
+
 		myText = nil
+		
+
+		
 		myText6 = nil
-		tableViewMeal:removeSelf()
+		myText6:removeEventListener("touch",gotoMenuuu)
+
 		Runtime:removeEventListener("touch", screenTouched)
 		print("Scene #1 : hide (will)")
 	elseif(phase == "did") then

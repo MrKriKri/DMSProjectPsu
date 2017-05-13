@@ -19,6 +19,7 @@ local function  showID(event)
 	 id = event.target.id
 	if(event.phase == "ended")then
 		print(id)
+		composer.gotoScene("regis3")
 	end
 	return id
 end
@@ -91,11 +92,13 @@ function scene:hide(evevt)
 		myText:removeSelf()
 		myText2:removeSelf()
 		myText3:removeSelf()
+	
 		LogoMan:removeSelf()
 		LogoWomen:removeSelf()
 		nextbtn:removeSelf()
 		backbtn:removeSelf()
 		backbtn = nil
+
 		nextbtn = nil
 		LogoMan = nil
 		LogoWomen = nil

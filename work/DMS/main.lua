@@ -19,6 +19,10 @@ composer.setVariable("idcard","")
 composer.setVariable("birthdate","")
 composer.setVariable("tel","")
 composer.setVariable("docID","")
-composer.setVariable("Meal","")
-composer.setVariable("amountt","")
+composer.setVariable("docid","")
+composer.setVariable("docname","")
+composer.setVariable("docline","")
+composer.setVariable("doctel","")
+
+
 composer.gotoScene("standard")

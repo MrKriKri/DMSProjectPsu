@@ -6,9 +6,9 @@ function gotoMenu(event)
 	composer.gotoScene("menu1")
 end
 
---function gotoProfile(event)
-	
---end
+function gotoProfile(event)
+	composer.gotoScene("view1")
+end
 
 --function gotoEdit(event)
 	
@@ -23,7 +23,9 @@ function gotoFoodrec(event)
 end
 
 function gotoLogout(event)
+	if(event.phase=="ended")then
 	LogOut(checklogin)
+end
 	
 end
 
@@ -60,7 +62,7 @@ ProFile = widget.newButton(
 		  }
 		)
 		
---myText1:addEventListener("touch",gotoProfile)
+myText1:addEventListener("touch",gotoProfile)
 --myText2:addEventListener("touch",gotoEdit)
 --myText3:addEventListener("touch",gotoReminder)
 myText4:addEventListener("touch",gotoFoodrec)
