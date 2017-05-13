@@ -42,11 +42,10 @@ function scene:show(event)
 	local phase = event.phase
 	if(phase == "will") then
 		print("Scene #4 : show (will)")
-<<<<<<< HEAD
+
 		display.setDefault("background",153/255,217/255,234/255)
-=======
-		display.setDefault("background",0,0,0)
->>>>>>> 1ce87193c7ac989900dc1f191907fce82a79e49c
+
+
 
 		myText = display.newText("Register",cx,70,"Arial",50)
 		myText:setTextColor(0/255,0/255,0/255)

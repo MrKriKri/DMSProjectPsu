@@ -9,7 +9,7 @@ function scene:create(event)
     print("Scene #1 : create")
 end
 
-function gotoMenuGG(event)
+function gotoMenuG(event)
     composer.gotoScene("menu1")
 end
 
@@ -31,7 +31,7 @@ myText1:setTextColor(0,0,0)
 
 
 
-myText1:addEventListener("touch",gotoMenuGG)
+myText1:addEventListener("touch",gotoMenuG)
 function scene:hide(evevt)
     local sceneGroup = self.view
     local phase = evevt.phase

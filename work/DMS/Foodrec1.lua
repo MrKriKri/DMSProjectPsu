@@ -185,7 +185,7 @@ function scene:hide(evevt)
 		myText2:removeSelf()
 		myText3:removeSelf()
 		myText4:removeSelf()
-		myText5:removeSelf()
+		myText0:removeSelf()
 		myText6:removeSelf()
 		myText7:removeSelf()
 		myText8:removeSelf()
@@ -212,7 +212,7 @@ function scene:hide(evevt)
 		myText2 = nil
 		myText3 = nil
 		myText4 = nil
-		myText5 = nil
+		myText0 = nil
 		myText6 = nil
 		myText7 = nil
 		myText8 = nil

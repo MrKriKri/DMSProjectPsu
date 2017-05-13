@@ -26,10 +26,9 @@ function scene:show(event)
 	local phase = event.phase
 	if(phase == "will") then
 		print("Scene #3 : show (will)")
-<<<<<<< HEAD
+
 		display.setDefault("background",153/255,217/255,234/255)
-=======
->>>>>>> 1ce87193c7ac989900dc1f191907fce82a79e49c
+
 
 		myText = display.newText("Register",cx,70,"Arial",50)
 		myText:setTextColor(0/255,0/255,0/255)
@@ -41,19 +40,21 @@ function scene:show(event)
 		myText3 = display.newText("ID card No.",55,240,"Arial",18)
 		myText3:setTextColor(0/255,0/255,0/255)
 		myText4 = display.newText("Date of Birth",55,285,"Arial",15)
-<<<<<<< HEAD
+
 		myText4:setTextColor(0/255,0/255,0/255)
 		myText5 = display.newText("Tel.",55,330,"Arial",20)
 		myText5:setTextColor(0/255,0/255,0/255)
 		myText6 = display.newText("Medical Problems",65,375,"Arial",15)
 		myText6:setTextColor(0/255,0/255,0/255)
-=======
-		myText5 = display.newText("Tel.",55,330+10,"Arial",20)
-		myText6 = display.newText("Medical Problems",65,375+10,"Arial",15)
+
+		
 		myText7 = display.newText("Date",150,310,"Arial",15)
+		myText7:setTextColor(0/255,0/255,0/255)
 		myText8 = display.newText("Month",220,310,"Arial",15)
+		myText8:setTextColor(0/255,0/255,0/255)
 		myText9 = display.newText("Year",280,310,"Arial",15)
->>>>>>> 1ce87193c7ac989900dc1f191907fce82a79e49c
+		myText9:setTextColor(0/255,0/255,0/255)
+
 
 		txfText = native.newTextField(215,150 ,185, 30)
 		txfText2 = native.newTextField(215,195 ,185, 30)
