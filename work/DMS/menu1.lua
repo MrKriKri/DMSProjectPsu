@@ -18,10 +18,6 @@ function gotoInformation(event)
 	composer.gotoScene("Information")
 end
 
-function food(event)
-	composer.gotoScene("foodguide")
-end
-
 
 function scene:create(event)
 	local sceneGroup = self.view
@@ -38,7 +34,7 @@ function scene:show(event)
 		ground = display.newRect(cx,15,cw,60)
 		ground:setFillColor(0.4,0.4,0.4)
 
-		myText = display.newText(composer.getVariable("username"),40,15,"Arial",20)
+		myText = display.newText(composer.getVariable("username"),215,15,"Arial",20)
 		myText1 = display.newText("Analysis",185,120,"Arial",30)
 		myText2 = display.newText("Graphs",180,230,"Arial",30)
 		myText3 = display.newText("Food Guides",220,340,"Arial",30)
@@ -81,8 +77,7 @@ Foodguide = widget.newButton(
 		    --onEvent = ,
 		    defaultFile = "iconFood.png" ,
 		    width = 90,
-		    height = 90,
-		    
+		    height = 90
 		  }
 		)
 
@@ -100,8 +95,6 @@ Graphs:addEventListener("touch",gotoGraph)
 ProFile:addEventListener("touch",gotoProfile)
 Analysis:addEventListener("touch",gotoCalculate)
 Information:addEventListener("touch",gotoInformation)
-Foodguide:addEventListener("touch",food)
-
 
 	elseif(phase == "did") then
 		print("Scene #1 : show (did)")

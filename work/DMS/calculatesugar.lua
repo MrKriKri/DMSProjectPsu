@@ -13,10 +13,9 @@ end
 
 function gotoAddtoRec(event)
 	sugarblood = tonumber(wTextField.text)
-
 	if(event.phase == "ended")then
 	login = composer.getVariable("nowuser")
-	print(sugarblood)
+	print(login)
 	if(sugarblood>180) then
 	sendLine(composer.getVariable("UserIDLine"),login,composer.getVariable("username"),wTextField.text)
 	end

@@ -23,19 +23,13 @@ function regis(event)
 				
 				
 	else
-		native.showAlert("Fail","Please!! Select Doctor","OK")
+		native.showAlert("Fail","Pleas!! Select Doctor","OK")
 	end
 end
 end
 
-local function showScenee(event)
+local function showScene(event)
 	composer.gotoScene("standard")
-end
-
-local function Cancel(event)
-	if(event.phase=="ended")then
-	composer.gotoScene("standard")
-end
 end
 
 function scene:create(event)
@@ -48,7 +42,11 @@ function scene:show(event)
 	local phase = event.phase
 	if(phase == "will") then
 		print("Scene #4 : show (will)")
+<<<<<<< HEAD
 		display.setDefault("background",153/255,217/255,234/255)
+=======
+		display.setDefault("background",0,0,0)
+>>>>>>> 1ce87193c7ac989900dc1f191907fce82a79e49c
 
 		myText = display.newText("Register",cx,70,"Arial",50)
 		myText:setTextColor(0/255,0/255,0/255)
@@ -75,13 +73,12 @@ LogoCan = widget.newButton(
    {
     x = cx+70, y = cy+250, 
     defaultFile = "Cancel.png" ,
-    onEvent = Cancel,
     width = 119,
     height = 40
   }
 )
 	LogoCon:addEventListener("touch",regis)
-	--LogoCan:addEventListener("touch",Cancel)
+	LogoCan:addEventListener("touch",showScene)
 
 	elseif(phase == "did") then
 		print("Scene #4 : show (did)")
@@ -94,7 +91,7 @@ function scene:hide(event)
 	if(phase == "will") then
 
 		LogoCon:removeEventListener("touch",regis)
-		LogoCan:removeEventListener("touch",Cancel)
+		LogoCan:removeEventListener("touch",showScene)
 		
 		composer.setVariable("mail","")
 		composer.setVariable("pass","")

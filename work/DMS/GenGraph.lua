@@ -38,7 +38,7 @@ function SendparamGraph(event)
 		resp=JSON.decode(event.response)
 			print(resp[1])
 			print(resp[2])
-		URL="https://chart.googleapis.com/chart?chxt=x,y&chxr=1,10,300&cht=lc&&chs=1000x300&chd=t:"..resp[1].."&chds=0,300&chl="..resp[2].."&chm=s,000000,0,-1,5"
+		URL="https://chart.googleapis.com/chart?chxt=x,y&chxr=1,10,300&cht=lc&&chs=1000x300&chd=t:"..resp[1].."|200&chds=0,300&chl="..resp[2].."&chm=s,000000,0,-1,5|H,FF0000,1,18,2"
 		print(URL)
 		network.download(URL,"GET",saveGraph,getname()..".PNG",system.TemporaryDirectory)
 		print(getname()..".PNG")
@@ -48,9 +48,18 @@ function SendparamGraph(event)
 end
 
 function CreatDataGraph(ID,Begin,ddd)
+	
+		if not(GraphImage==nil)then
+			scrollView:removeSelf()
+			scrollView=nil
+			GraphImage:removeSelf()
+			GraphImage=nil
+		end
 
 	setname(math.random(0,500))
 	URLL="http://localhost/getRecbyDate.php?ID="..ID.."&Begin="..ddd.."&End="..Begin
 	print(URLL)
 	network.request(URLL,"GET",SendparamGraph)
+
+
 end
