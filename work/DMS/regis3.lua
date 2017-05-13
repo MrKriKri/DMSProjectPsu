@@ -26,7 +26,6 @@ function scene:show(event)
 	local phase = event.phase
 	if(phase == "will") then
 		print("Scene #3 : show (will)")
-		display.setDefault("background",0/255,162/255,232/255)
 
 		myText = display.newText("Register",cx,70,"Arial",50)
 
@@ -34,17 +33,22 @@ function scene:show(event)
 		myText2 = display.newText("Surname",55,195,"Arial",20)
 		myText3 = display.newText("ID card No.",55,240,"Arial",18)
 		myText4 = display.newText("Date of Birth",55,285,"Arial",15)
-		myText5 = display.newText("Tel.",55,330,"Arial",20)
-		myText6 = display.newText("Medical Problems",65,375,"Arial",15)
+		myText5 = display.newText("Tel.",55,330+10,"Arial",20)
+		myText6 = display.newText("Medical Problems",65,375+10,"Arial",15)
+		myText7 = display.newText("Date",150,310,"Arial",15)
+		myText8 = display.newText("Month",220,310,"Arial",15)
+		myText9 = display.newText("Year",280,310,"Arial",15)
 
 		txfText = native.newTextField(215,150 ,185, 30)
 		txfText2 = native.newTextField(215,195 ,185, 30)
 		txfText3 = native.newTextField(215,240 ,185, 30)
 		txfText3.inputType = "number"
-		txfText4 = native.newTextField(215,285 ,185, 30)
-		txfText5 = native.newTextField(215,330 ,185, 30)
+		txfText4 = native.newTextField(150,285 ,50, 30)
+		txfText8 = native.newTextField(220,285 ,50, 30)
+		txfText9 = native.newTextField(290,285 ,50, 30)
+		txfText5 = native.newTextField(215,330+10 ,185, 30)
 		txfText5.inputType = "number"
-		txfText6 = native.newTextField(218,375 ,185, 30)
+		txfText6 = native.newTextField(218,375+10 ,185, 30)
 				nextbtn = widget.newButton(
 				{x = cx+100, y = cy+230, 
     			onEvent = showScene,
@@ -79,8 +83,9 @@ function scene:hide(event)
 		composer.setVariable("name",txfText.text)
 		composer.setVariable("lname",txfText2.text)
 		composer.setVariable("idcard",txfText3.text)
-		composer.setVariable("birthdate",txfText4.text)
+		composer.setVariable("birthdate",txfText9.text.."-"..txfText8.text.."-"..txfText4.text)
 		composer.setVariable("tel",txfText5.text)
+
 
 		myText:removeSelf()
 		myText1:removeSelf()
@@ -89,16 +94,23 @@ function scene:hide(event)
 		myText4:removeSelf()
 		myText5:removeSelf()
 		myText6:removeSelf()
+		myText7:removeSelf()
+		myText8:removeSelf()
+		myText9:removeSelf()
 		txfText:removeSelf()
 		txfText2:removeSelf()
 		txfText3:removeSelf()
 		txfText4:removeSelf()
 		txfText5:removeSelf()
 		txfText6:removeSelf()
+		txfText8:removeSelf()
+		txfText9:removeSelf()
 		nextbtn:removeSelf()
 		backbtn:removeSelf()
 		backbtn = nil
 		nextbtn=nil
+		txfText9 = nil
+		txfText8 = nil
 		myText = nil
 		myText1 = nil
 		myText2 = nil
@@ -106,6 +118,9 @@ function scene:hide(event)
 		myText4 = nil
 		myText5 = nil
 		myText6 = nil
+		myText7 = nil
+		myText8 = nil
+		myText9 = nil
 		txfText = nil
 		txfText2 = nil
 		txfText3 = nil

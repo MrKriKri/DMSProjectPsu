@@ -9,9 +9,7 @@ local loinstatus
 
 --------------------------------------------------------------------
 function gotoRegis(event)
-	if(event.phase=="ended") then
 	composer.gotoScene("regis1")
-end
 end
 --------------------------------------------------------------------
 function gotoInside(event)
@@ -58,10 +56,8 @@ function scene:show(event)
 		Text1 = display.newText("New to account",155,cy +250,"Cloud-Bold",20)
 		Text1:setTextColor(0/255,0/255,0/255)
 		txfText = native.newTextField(210,220 ,200, 30)
-		txfText.align = "center"
 		txfText2 = native.newTextField(210,265 ,200, 30)
 		txfText2.isSecure = true
-		txfText2.align = "center"
 
 
 
@@ -88,14 +84,14 @@ function scene:show(event)
 		btnRegis = widget.newButton(
 		   {
 		    x = 270, y = cy +230, 
-		    onEvent = gotoRegis,
+		    --onEvent = gotoRegis,
 		    defaultFile = "Register.png" ,
 		    width = 80,
 		    height = 80
 		  }
 		)
 		btnLogin:addEventListener("touch",gotoInside)
-		--btnRegis:addEventListener("touch",gotoRegis)
+		btnRegis:addEventListener("touch",gotoRegis)
 	elseif(phase == "did") then
 		print("Scene #1 : show (did)")
 		

@@ -1,6 +1,7 @@
 local composer = require("composer")
 local scene = composer.newScene()
 local widget = require("widget")
+local datenow = os.date("*t")
 require("GenGraph")
 function CreaterGraph(event)
 	if(event.phase=="ended")then
@@ -62,7 +63,8 @@ function scene:show(event)
 		    height = 50
 		  }
 		)
-
+		now = datenow.year.."-"..datenow.month.."-"..datenow.day
+		CreatDataGraph(composer.getVariable("nowuser"),now,now)
 		myText = display.newText(composer.getVariable("username"),215,15,"Arial",20)
 		txtBeginfld = native.newTextField(240,400,100, 30)
 		txtEndfld = native.newTextField(75,400,100, 30)
@@ -103,6 +105,8 @@ function scene:hide(evevt)
 			GraphImage:removeSelf()
 			GraphImage=nil
 		end
+
+		
 		ground  = nil
 		ProFile = nil
 		myText = nil

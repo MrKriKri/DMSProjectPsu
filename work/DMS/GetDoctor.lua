@@ -2,7 +2,7 @@ JSON = require("json")
 widget = require("widget")
 composer = require("composer")
 resp = {}
-
+local max
 
 
 
@@ -11,11 +11,12 @@ local function rowRender(event)
     local rowString1, rowString2
 
     row = event.row
-
+    
     fontSize = 15
     rowHeight = row.contentHeight
     rowWidth = row.contentWidth
-
+    print(rowHeight)
+    print(rowWidth)
     if (event.row.index == 1) then
         rowTitle1 = display.newText(row, "Doctor", 0, 0, "Quark-Bold", fontSize + 15)    
         rowTitle1:setFillColor(1, 1, 1)
@@ -51,6 +52,8 @@ local function rowRender(event)
 
 end
 local function rowTouch(event)    
+    local e = event.row 
+
     if (event.phase == "press") then
     if not(mytextDocname==nil) then
         mytextDocname:removeSelf()
@@ -58,7 +61,7 @@ local function rowTouch(event)
         mytextDocID:removeSelf()
         mytextDocID = nil
         
-        end
+    end
         
         mytextDocID = display.newText("Doctor ID : "..resp[event.row.index-1]["DoctorID"],cx,320,"Arial",20)
         mytextDocname = display.newText("Doctor Name : "..resp[event.row.index-1]["DocName"],cx,360,"Arial",20)
@@ -116,8 +119,7 @@ end
 end 
 
 function GetDoctor()
-    local url ="http://localhost/GetInfoDoctor.php"
-    print(url)
+    url = "http://localhost/GetInfoDoctor.php"
     network.request(
         url,
         "GET",
